@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <h3>Post a Habit</h3>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type=“submit”>Post</button>
+    </form>
+</div>
+
+<div>
+    {% for habit in user.habits.all %}
+        <a href><h3 class=“question”>Habit:{{ habit.name }}</h3></a>
+        <p class=“description”>Goal: {{ habit.goal }}</p>
+        <p>{{habit.created_at}}</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

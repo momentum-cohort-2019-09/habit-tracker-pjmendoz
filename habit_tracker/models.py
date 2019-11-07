@@ -14,7 +14,7 @@ class Habit(models.Model):
     name = models.CharField(max_length=200)
     goal = models.IntegerField()
     created_date = models.DateTimeField(default=timezone.now)
-    end_date = models.DateTimeField(default=None)
+    end_date = models.DateTimeField(default=None, null=True, blank=True)
 
     def __str__(self):
         return self.name
