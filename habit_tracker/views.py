@@ -8,8 +8,9 @@ from django.utils import timezone
 # Create your views here.
 
 def home_page(request):
-    user = request.user
-    return render(request, 'home.html', {"user": user})
+    creator = request.user
+    all_habits = Habit.objects.all()
+    return render(request, "home.html", {"all_habits": all_habits, "creator": creator })
 
 
 def profile_page(request):
@@ -22,17 +23,7 @@ def profile_page(request):
             habit = form.save()
             return redirect(to='profile_page')   
     else:
-        form = HabitForm()    
-    return render(request, "profile.html", {"user": user, "form": form})
+        form = HabitForm()   
+        user_habits = Habit.objects.filter(creator=User.objects.get(pk=request.user.pk)) 
+    return render(request, "profile.html", {"user": user, "form": form, "habits": user_habits})
 
-
-def habit_render(request, pk):
-    allhabits = Habit.objects.filter(creator=request.user)
-    if request.method =="POST":
-        form = HabitForm(request.POST)
-        if form.is_valid():
-            habit = form.save()
-            return redirect(to='profile_page', pk=allhabits.pk)
-    else:
-        form = HabitForm()
-    return render(request, "profile.html", {"form": form})

@@ -11,6 +11,13 @@
 </head>
 <body>
     {% block content%}
+
+    {% for habit in all_habits %}
+        <div>{{ habit.name }}</div>
+        <div>Creator: {{ habit.creator }}</div>
+        <p> {{habit.created_date}} </p>
+
+    {% endfor %}
     {% endblock %}
 </body>
 </html>

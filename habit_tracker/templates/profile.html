@@ -11,10 +11,10 @@
 </div>
 
 <div>
-    {% for habit in user.habits.all %}
-        <a href><h3 class=“question”>Habit:{{ habit.name }}</h3></a>
-        <p class=“description”>Goal: {{ habit.goal }}</p>
-        <p>{{habit.created_at}}</p>
+    {% for habit in habits %}
+        <a href><h3 class=“question”>{{ habit.name }}</h3></a>
+        <p>Goal: {{ habit.goal }}</p>
+        <p> {{habit.created_date}} </p>
     {% endfor %}
 </div>
 

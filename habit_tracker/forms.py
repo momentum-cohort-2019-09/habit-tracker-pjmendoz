@@ -7,4 +7,4 @@ class HabitForm(forms.ModelForm):
 
   class Meta:
     model = Habit
-    fields = ['name','goal']
+    fields = ['name','goal', 'end_date']
