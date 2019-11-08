@@ -12,9 +12,12 @@
 
 <div>
     {% for habit in habits %}
-        <a href><h3 class=“question”>{{ habit.name }}</h3></a>
-        <p>Goal: {{ habit.goal }}</p>
+        <a href = "{% url 'habit_detail' habit.pk %}"><h3>{{ habit.name }}</h3></a>
+        <p>Quantity of Habit: {{ habit.quantity }}</p>
         <p> {{habit.created_date}} </p>
+        {% for observer in habit.observer.all %}
+        <p>{{ observer.username }}</p>
+        {% endfor %}
     {% endfor %}
 </div>
 

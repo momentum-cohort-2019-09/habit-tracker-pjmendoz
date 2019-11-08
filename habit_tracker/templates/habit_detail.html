@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Habit Details</title>
+</head>
+<body>
+    {% block content %}
+    <div>
+        <h3>Did you meet your goal for today?</h3>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type=“submit”>Post</button>
+        </form>
+    </div>
+    <div>
+        <h3>History</h3>
+        {% for record in records %}
+            <p>{{ record.record }}</p>
+            <p>{{ record.date }}</p>
+            <p>{{ record.actual }}</p>
+            <p>{{ record.met_goal }}</p>
+        {% endfor %}
+    </div>
+    
+    {% endblock %}
+</body>
+</html>
