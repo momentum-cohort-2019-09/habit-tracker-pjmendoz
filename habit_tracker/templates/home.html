@@ -1,23 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-</head>
-<body>
-    {% block content%}
 
-    {% for habit in all_habits %}
-        <div>{{ habit.name }}</div>
-        <div>Creator: {{ habit.creator }}</div>
-        <p> {{habit.created_date}} </p>
+{% block content%}
 
-    {% endfor %}
-    {% endblock %}
-</body>
-</html>
+<div class = "habits">
+        {% for habit in all_habits %}
+        <div class = "habit">
+            <a href ="{% url 'habit_detail' habit.pk %}">{{ habit.name }}</a>
+            <p>Creator: {{ habit.creator }}</p>
+            <p> {{habit.created_date}} </p>
+        </div>    
+        {% endfor %}
+</div>
+{% endblock %}

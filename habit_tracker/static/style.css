@@ -1,7 +1,55 @@
 * {
-	font-family: 'Oxygen', sans-serif;
+	font-family: 'Fjalla One', sans-serif;
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 
+body {
+	background-color: #EED6C5; 
+}
+
+h1 {
+	font-family: 'Fjalla One', sans-serif;
+	text-align: center;
+	letter-spacing: 2px;
+	margin-bottom: 15px; 
+	color: #874C69;
+}
+
+
+h3 {
+	text-align: center;
+	margin-bottom: 20px; 
+	text-decoration: underline;
+}
+
+h5 {
+	text-align: center; 
+	margin-bottom: 10px; 
+}
+
+.navigation {
+	background-color: #ECBC98 ; 
+	padding: 15px; 
+	border-bottom-left-radius: 15%; 
+	border-bottom-right-radius: 15%; 
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.habits {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+a {
+	color: #874C69;
+}
+a:hover {
+	text-decoration: none;
+	color:#B8879F; 
+}

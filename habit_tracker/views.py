@@ -28,6 +28,7 @@ def profile_page(request):
     return render(request, "profile.html", {"user": user, "form": form, "habits": user_habits})
 
 
+@login_required
 def habit_detail(request, pk): 
     habit = Habit.objects.get(pk=pk)
     if request.method == "POST":

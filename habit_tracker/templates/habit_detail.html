@@ -1,17 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Habit Details</title>
-</head>
-<body>
-    {% block content %}
-    <div>
+{% block content %}
+<div class = "habits">
+    <div class = "habit">
         <h3>Did you meet your goal for today?</h3>
         <form action="" method="POST">
             {% csrf_token %}
@@ -19,16 +11,17 @@
             <button type=“submit”>Post</button>
         </form>
     </div>
-    <div>
-        <h3>History</h3>
+    <div class = "habit">
+        <h3>Daily Journal</h3>
         {% for record in records %}
-            <p>{{ record.record }}</p>
-            <p>{{ record.date }}</p>
-            <p>{{ record.actual }}</p>
-            <p>{{ record.met_goal }}</p>
+            <p>Habit: {{record.habit }}</p>
+            <p>Today's Diary:{{ record.record }}</p>
+            <p>Date Entered: {{ record.date }}</p>
+            <p>Quantity You Accomplished: {{ record.actual }}</p>
+            <p>Did you do accomplish your habit?: {{ record.met_goal }}</p>
         {% endfor %}
+        <a href>Add Observer</a>
     </div>
-    
-    {% endblock %}
-</body>
-</html>
+</div>
+
+{% endblock %}

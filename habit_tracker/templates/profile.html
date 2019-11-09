@@ -1,24 +1,26 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-<div>
-    <h3>Post a Habit</h3>
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type=“submit”>Post</button>
-    </form>
-</div>
+<div class = "habits">
+    <div class = "habit">
+        <h3>Post a Habit</h3>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type=“submit”>Post</button>
+        </form>
+    </div>
 
-<div>
-    {% for habit in habits %}
-        <a href = "{% url 'habit_detail' habit.pk %}"><h3>{{ habit.name }}</h3></a>
-        <p>Quantity of Habit: {{ habit.quantity }}</p>
-        <p> {{habit.created_date}} </p>
-        {% for observer in habit.observer.all %}
-        <p>{{ observer.username }}</p>
+    <div class = "habit">
+        {% for habit in habits %}
+            <a href = "{% url 'habit_detail' habit.pk %}"><h5>{{ habit.name }}</h5></a>
+            <p>Quantity of Habit: {{ habit.quantity }}</p>
+            <p> {{habit.created_date}} </p>
+            {% for observer in habit.observer.all %}
+            <p>Observers: {{ observer.username }}</p>
+            {% endfor %}
         {% endfor %}
-    {% endfor %}
+    </div>
 </div>
-
 {% endblock %}
