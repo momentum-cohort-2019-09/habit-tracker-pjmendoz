@@ -6,7 +6,7 @@
 
 <div class = "habits">
         {% for habit in all_habits %}
-        <div class = "habit">
+        <div class = "habit" >
             <a href ="{% url 'habit_detail' habit.pk %}">{{ habit.name }}</a>
             <p>Creator: {{ habit.creator }}</p>
             <p> {{habit.created_date}} </p>

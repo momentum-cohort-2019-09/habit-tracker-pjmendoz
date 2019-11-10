@@ -2,8 +2,11 @@
 {% load static %}
 
 {% block content %}
+
+
+
 <div class = "habits">
-    <div class = "habit">
+    <div class = "habit" >
         <h3>Did you meet your goal for today?</h3>
         <form action="" method="POST">
             {% csrf_token %}
@@ -14,11 +17,10 @@
     <div class = "habit">
         <h3>Daily Journal</h3>
         {% for record in records %}
-            <p>Habit: {{record.habit }}</p>
-            <p>Today's Diary:{{ record.record }}</p>
-            <p>Date Entered: {{ record.date }}</p>
             <p>Quantity You Accomplished: {{ record.actual }}</p>
+            <p>Today's Diary:{{ record.record }}</p>
             <p>Did you do accomplish your habit?: {{ record.met_goal }}</p>
+            <p class = "date">Date Entered: {{ record.date }}</p>
         {% endfor %}
         <a href>Add Observer</a>
     </div>
