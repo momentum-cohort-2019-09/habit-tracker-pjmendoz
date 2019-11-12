@@ -6,7 +6,7 @@
 
 
 <div class = "habits">
-    <div class = "habit" >
+    <div class = "habit_post" >
         <h3>Did you meet your goal for today?</h3>
         <form action="" method="POST">
             {% csrf_token %}
@@ -14,7 +14,7 @@
             <button type=“submit”>Post</button>
         </form>
     </div>
-    <div class = "habit">
+    <div class = "habit_post">
         <h3>Daily Journal</h3>
         {% for record in records %}
             <p>Quantity You Accomplished: {{ record.actual }}</p>

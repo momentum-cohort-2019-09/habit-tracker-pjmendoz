@@ -14,12 +14,12 @@ h1 {
 	text-align: center;
 	letter-spacing: 2px;
 	margin-bottom: 15px; 
-	color: #43AA91;
+	color: #7F3D53;
 }
 
 
 h3 {
-	color: #43AA91;
+	color: #7F3D53;
 	font-family: 'Fjalla One', sans-serif;
 	text-align: center;
 	margin-bottom: 20px; 
@@ -27,7 +27,7 @@ h3 {
 }
 
 h5 {
-	color: #43AA91;
+	color: #7F3D53;
 	font-family: 'Fjalla One', sans-serif;
 }
 
@@ -55,22 +55,35 @@ h5 {
 	border-bottom-left-radius: 10%; 
 	padding: 50px 100px; 
 	box-shadow: 8px 8px 4px grey;
-	margin-bottom: 20px; 
-	margin-right: 6px; 
+	margin-bottom: 8%; 
+	margin-right: 5%; 
+	max-width: 25%; 
+}
+
+.habit_post{
+	background-color: #ECBC98; 
+	border-top-left-radius: 10%;
+	border-top-right-radius: 10%; 
+	border-bottom-left-radius: 10%; 
+	padding: 50px 100px; 
+	box-shadow: 8px 8px 4px grey;
+	margin-bottom: 8%; 
+	margin-right: 5%; 
+	max-width: 80%; 
 }
 
 a {
-	color: #43AA91;
+	color: #7F3D53;
 }
 
 a:hover {
 	text-decoration: none;
-	color: #43AA91;
+	color: #7F3D53;
 	text-shadow: 0 0 3px #ffffff;
 }
 
 label {
-	color: #43AA91;
+	color: #7F3D53;
 }
 
 .date {
